@@ -1,26 +1,23 @@
 package com.example.location.Entity.Renter;
 
 import com.example.location.Entity.Rentable.Rentable;
-import com.example.location.Entity.Renter.*;
-
 import java.util.List;
 
 public sealed interface Renter permits Person, Company, Church, Organization {
-    String name();
-    List<Rentable> rentedItems();
+  String name();
 
-    default void rent(Rentable item) {
-        rentedItems().add(item);
-    }
+  List<Rentable> rentedItems();
 
-    default double totalDailyCost() {
-        return rentedItems().stream()
-                .mapToDouble(Rentable::dailyRentalPrice)
-                .sum();
-    }
+  default void rent(Rentable item) {
+    rentedItems().add(item);
+  }
 
-    default String summary() {
-        return "%s | Rents %d item(s) | Daily cost: %.2f€"
-                .formatted(name(), rentedItems().size(), totalDailyCost());
-    }
+  default double totalDailyCost() {
+    return rentedItems().stream().mapToDouble(Rentable::dailyRentalPrice).sum();
+  }
+
+  default String summary() {
+    return "%s | Rents %d item(s) | Daily cost: %.2f€"
+        .formatted(name(), rentedItems().size(), totalDailyCost());
+  }
 }
