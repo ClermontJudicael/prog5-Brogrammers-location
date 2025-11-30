@@ -6,6 +6,6 @@ import java.util.List;
 
 public record Person(String name, List<Rentable> rentedItems) implements Renter {
   public Person(String name) {
-    this(name, new ArrayList<>()); // mutable list so we can add items
+    this(name, new ArrayList<>()); // mutable list
   }
 }

@@ -1,8 +1,10 @@
 package com.example.location.Entity.Rentable;
 
-public record Car(String brand, String model, double dailyRentalPrice) implements Rentable {
-  public Car(String brand, double dailyRentalPrice) {
-    this(brand, "Unknown Model", dailyRentalPrice);
+public record Car(String id, String brand, String model, double dailyRentalPrice)
+    implements Rentable {
+
+  public Car(String id, String brand, double dailyRentalPrice) {
+    this(id, brand, "Unknown Model", dailyRentalPrice);
   }
 
   @Override

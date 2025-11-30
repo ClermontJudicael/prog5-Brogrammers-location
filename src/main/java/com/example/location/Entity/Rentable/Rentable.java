@@ -1,6 +1,8 @@
 package com.example.location.Entity.Rentable;
 
 public interface Rentable {
+  String id();
+
   double dailyRentalPrice();
 
   String description();

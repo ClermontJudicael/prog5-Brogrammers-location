@@ -1,0 +1,10 @@
+Ticket: Manager Service
+
+Objectif:
+- Fournir la logique interne pour gérer les Rentable
+- Méthodes: addRentable, getRentableOrThrow, listRentables
+- Exceptions gérées: RentableNotFoundException, DuplicateRentableException
+- Utilisé par le Service pour exposer l'endpoint /rentable/{id}
+
+Tests:
+- JUnit couvrant ajout, récupération, doublon, liste, erreurs
