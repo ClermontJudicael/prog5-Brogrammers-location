@@ -18,7 +18,7 @@ Member Id
 
 __Preprop__ is the branch for the development, actually using memory instead of database for development purpose, and it is subject for changes since it can works on postgresql database.
 
-Here’s one random assignment:
+Work assignment:
 
 * **STD23099 Rado** → Manager
 * **STD23098 Judicael** → Entity
