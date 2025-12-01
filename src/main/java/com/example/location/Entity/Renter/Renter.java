@@ -3,9 +3,10 @@ package com.example.location.Entity.Renter;
 import com.example.location.Entity.Rentable.Rentable;
 import java.util.List;
 
-public sealed interface Renter permits Person, Company, Church, Organization {
-  String name();
+public interface Renter {
 
+  String id();
+  String name();
   List<Rentable> rentedItems();
 
   default void rent(Rentable item) {
@@ -18,6 +19,12 @@ public sealed interface Renter permits Person, Company, Church, Organization {
 
   default String summary() {
     return "%s | Rents %d item(s) | Daily cost: %.2f€"
-        .formatted(name(), rentedItems().size(), totalDailyCost());
+            .formatted(name(), rentedItems().size(), totalDailyCost());
   }
+
+  String type();
+
+  String getId();
+  String getName();
+  String getType();
 }

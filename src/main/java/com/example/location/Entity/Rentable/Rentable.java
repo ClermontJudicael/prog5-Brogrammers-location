@@ -8,4 +8,14 @@ public interface Rentable {
   default double priceForDays(int days) {
     return dailyRentalPrice() * Math.max(0, days);
   }
+
+    String id();
+
+  String getId();
+
+  String getType();
+
+  double getDailyPrice();
+
+  String getDescription();
 }

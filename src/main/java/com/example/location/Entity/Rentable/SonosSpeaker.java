@@ -5,4 +5,29 @@ public record SonosSpeaker(String type, double dailyRentalPrice) implements Rent
   public String description() {
     return "Sonos Speaker - " + type;
   }
+
+  @Override
+  public String id() {
+    return "";
+  }
+
+  @Override
+  public String getId() {
+    return "";
+  }
+
+  @Override
+  public String getType() {
+    return "";
+  }
+
+  @Override
+  public double getDailyPrice() {
+    return 0;
+  }
+
+  @Override
+  public String getDescription() {
+    return "";
+  }
 }
