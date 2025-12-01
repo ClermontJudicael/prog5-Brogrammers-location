@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/renter")
 public class RenterController {
 
-    private final RenterService renterService;
+  private final RenterService renterService;
 
-    public RenterController(RenterService renterService) {
-        this.renterService = renterService;
-    }
+  public RenterController(RenterService renterService) {
+    this.renterService = renterService;
+  }
 
-    @PostMapping("/{renterId}/rent/{rentableId}")
-    public void rent(@PathVariable String renterId, @PathVariable String rentableId) {
-        renterService.rent(renterId, rentableId);
-    }
+  @PostMapping("/{renterId}/rent/{rentableId}")
+  public void rent(@PathVariable String renterId, @PathVariable String rentableId) {
+    renterService.rent(renterId, rentableId);
+  }
 
-    @GetMapping("/{renterId}/summary")
-    public String summary(@PathVariable String renterId) {
-        return renterService.renterSummary(renterId);
-    }
+  @GetMapping("/{renterId}/summary")
+  public String summary(@PathVariable String renterId) {
+    return renterService.renterSummary(renterId);
+  }
 }

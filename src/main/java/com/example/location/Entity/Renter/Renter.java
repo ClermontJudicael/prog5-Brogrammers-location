@@ -6,7 +6,9 @@ import java.util.List;
 public interface Renter {
 
   String id();
+
   String name();
+
   List<Rentable> rentedItems();
 
   default void rent(Rentable item) {
@@ -19,12 +21,14 @@ public interface Renter {
 
   default String summary() {
     return "%s | Rents %d item(s) | Daily cost: %.2f€"
-            .formatted(name(), rentedItems().size(), totalDailyCost());
+        .formatted(name(), rentedItems().size(), totalDailyCost());
   }
 
   String type();
 
   String getId();
+
   String getName();
+
   String getType();
 }

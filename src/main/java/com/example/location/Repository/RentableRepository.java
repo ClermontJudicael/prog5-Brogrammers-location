@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RentableRepository {
-    Optional<Rentable> findById(String id);
-    List<Rentable> findAll();
-    void save(Rentable rentable);
+  Optional<Rentable> findById(String id);
+
+  List<Rentable> findAll();
+
+  void save(Rentable rentable);
 }

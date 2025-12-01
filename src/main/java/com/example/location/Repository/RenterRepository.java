@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RenterRepository {
-    Optional<Renter> findById(String id);
-    List<Renter> findAll();
-    void save(Renter renter);
+  Optional<Renter> findById(String id);
+
+  List<Renter> findAll();
+
+  void save(Renter renter);
 }

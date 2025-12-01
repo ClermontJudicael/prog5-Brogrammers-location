@@ -11,8 +11,6 @@ public interface Rentable {
     return dailyRentalPrice() * Math.max(0, days);
   }
 
-    String id();
-
   String getId();
 
   String getType();

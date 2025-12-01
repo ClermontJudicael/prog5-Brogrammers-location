@@ -2,26 +2,30 @@ package com.example.location.Repository.impl;
 
 import com.example.location.Entity.Renter.Renter;
 import com.example.location.Repository.RenterRepository;
-import org.springframework.stereotype.Repository;
 import java.util.*;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Repository;
 
+@Primary
 @Repository
+@Profile("dev")
 public class InMemoryRenterRepository implements RenterRepository {
 
-    private final Map<String, Renter> store = new HashMap<>();
+  private final Map<String, Renter> store = new HashMap<>();
 
-    @Override
-    public Optional<Renter> findById(String id) {
-        return Optional.ofNullable(store.get(id));
-    }
+  @Override
+  public Optional<Renter> findById(String id) {
+    return Optional.ofNullable(store.get(id));
+  }
 
-    @Override
-    public List<Renter> findAll() {
-        return new ArrayList<>(store.values());
-    }
+  @Override
+  public List<Renter> findAll() {
+    return new ArrayList<>(store.values());
+  }
 
-    @Override
-    public void save(Renter renter) {
-        store.put(renter.name(), renter);
-    }
+  @Override
+  public void save(Renter renter) {
+    store.put(renter.name(), renter);
+  }
 }
