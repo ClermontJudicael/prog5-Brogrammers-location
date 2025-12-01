@@ -25,4 +25,3 @@ public class InMemoryRentableRepository implements RentableRepository {
         store.put(rentable.id(), rentable);
     }
 }
-

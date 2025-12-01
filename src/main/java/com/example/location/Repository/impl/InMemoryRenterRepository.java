@@ -25,5 +25,3 @@ public class InMemoryRenterRepository implements RenterRepository {
         store.put(renter.name(), renter);
     }
 }
-
-
