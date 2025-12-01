@@ -5,7 +5,11 @@ INSERT INTO renter (id, name, type) VALUES
                                         ('c1', 'Orange Company', 'Company'),
                                         ('c2', 'Telma Enterprise', 'Company'),
                                         ('ch1', 'St Michel Church', 'Church'),
-                                        ('as1', 'Youth Association', 'Association');
+                                        ('as1', 'Youth Association', 'Association')
+ON CONFLICT (id) DO UPDATE
+    SET name = EXCLUDED.name,
+        type = EXCLUDED.type;
+
 
 INSERT INTO rentable (id, type, daily_price, description) VALUES
                                                               ('car1', 'Car', 50.00, 'Toyota Yaris'),
@@ -14,6 +18,9 @@ INSERT INTO rentable (id, type, daily_price, description) VALUES
                                                               ('pc1', 'Computer', 20.00, 'HP Laptop 8GB'),
                                                               ('pc2', 'Computer', 35.00, 'MacBook Pro 2019'),
                                                               ('sp1', 'SonosSpeaker', 10.00, 'Sonos One Speaker'),
-                                                              ('money1', 'Money', 5.00, 'Short term money loan');
-
+                                                              ('money1', 'Money', 5.00, 'Short term money loan')
+ON CONFLICT (id) DO UPDATE
+    SET type = EXCLUDED.type,
+        daily_price = EXCLUDED.daily_price,
+        description = EXCLUDED.description;
 
